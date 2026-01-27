@@ -11,6 +11,7 @@
             <a href="<?= '/' ?>" aria-current="page" class="<?php if($_SERVER['REQUEST_URI'] === '/'){echo'bg-gray-900';} ?> rounded-md text-gray-300 px-3 py-2 text-sm font-medium text-white">Home</a>
             <a href="<?= '/contact' ?>" class="<?php if($_SERVER['REQUEST_URI'] === '/contact'){echo'bg-gray-900';} ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Contact</a>
             <a href="<?= '/about' ?>" class="<?php if($_SERVER['REQUEST_URI'] === '/about'){echo'bg-gray-900';} ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">About</a>
+            <a href="<?= '/notes' ?>" class="<?php if($_SERVER['REQUEST_URI'] === '/notes'){echo'bg-gray-900';} ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Notes</a>
           </div>
         </div>
       </div>
