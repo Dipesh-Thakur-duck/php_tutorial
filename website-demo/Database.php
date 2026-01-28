@@ -2,6 +2,7 @@
 
 class Database {
   public $connection;
+  public $statement;
 
   public function __construct($config, $username='root', $password=''){
 
@@ -11,8 +12,32 @@ class Database {
   }
 
   public function query($query,$params=[]){
-    $statement = $this->connection->prepare($query);
-    $statement->execute($params);
-    return $statement;
+    $this->statement = $this->connection->prepare($query);
+    $this->statement->execute($params);
+    return $this;
+  }
+
+  public function fetch(){
+    return $this->statement->fetch();
+  }
+
+  public function fetchAll(){
+    return $this->statement->fetchAll();
+  }
+
+  public function findorFail(){
+    $result = $this->fetch();
+
+    if(!$result){
+      abort();
+    }
+
+    return $result;
+  }
+
+  public function authorize($condition, $status= Response::FORBIDDEN){
+    if (!$condition){
+      abort($status);
+    }
   }
 }
