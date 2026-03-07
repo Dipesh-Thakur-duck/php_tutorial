@@ -33,3 +33,9 @@ function abort($code = 404){
   require base_path("views/{$code}.php");
   die();
 }
+
+function redirect($path){
+  header("Location: {$path}");
+  exit();
+}
+
